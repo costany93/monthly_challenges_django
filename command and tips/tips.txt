@@ -1,0 +1,7 @@
+Pour activerr les templates nous devons aller  dans le fichier settings de notre application de base et modifier l'argument DIRS de ce fichier
+
+Encore mieux et recommande pour utiliser les templates c'est de placer le nom du dossier de l'app dans les apps que django reconnait dans le fichier settings au niveau de INSTALLED_APPS(c'est la meilleure facon de loader nos templates django)
+
+Placer la reconnaissance des templates dans le DIRS du fichier settings si et seulement si ces templates seront utilise par plusieurs app de notre projet django
+
+dans le cas d'une utilisation a l'interieur de notre app il vaut mieux utiliser INSTALLED_APPS pour installer noss templates

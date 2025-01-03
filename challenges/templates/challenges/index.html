@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+
+    {% block page_title %}Mes chalenges {% endblock  %}
+    {% block content %}
+        <ul>
+            {% for month  in  months %}
+                <!-- ici la fonction url nous ai donnee par django html afin de pouvoir dynamiser les urls dans les templates -->
+                <li><a href="{% url "month-challenges" month %}">{{ month }}</a></li>
+            {% endfor %}
+        </ul>
+    {% endblock content %}

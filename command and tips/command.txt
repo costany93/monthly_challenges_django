@@ -1,0 +1,8 @@
+django-admin createproject nomDuProjet: Cree un projet django
+
+python3 manage.py runserver: Lance le server de developpement du projet
+
+python3 manage.py startapp nomApp: premet de creer une pallication django
+
+
+

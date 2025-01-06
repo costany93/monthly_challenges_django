@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
+from django.http import HttpResponse, Http404, HttpResponseNotFound, HttpResponseRedirect
 from django.urls import reverse
 # from django.template.loader import render_to_string
 
@@ -41,18 +41,19 @@ def index(request):
 
 def monthly_challenge(request, month):
     # ici on teste si le moiss passer en parametre d'url est  dans notre liste de mois
-    # try:
-    challenge_text = monthly_challenges[month]
-    # ici on definit la reponse dans notre templates challenges/templates/challenge.html
-    return render(request, 'challenges/challenge.html', {
-        "text": challenge_text,
-        "month": month
-    })
+    try:
+        challenge_text = monthly_challenges[month]
+        # ici on definit la reponse dans notre templates challenges/templates/challenge.html
+        return render(request, 'challenges/challenge.html', {
+            "text": challenge_text,
+            "month": month
+        })
 
-    # response_data = render_to_string("challenges/challenge.html")
-    return HttpResponse(response_data)
-    # except:
-    return HttpResponseNotFound("Ce mois n'est pas disponible")
+        # response_data = render_to_string("challenges/challenge.html")
+        return HttpResponse(response_data)
+    except:
+        # ici nous affichons la page 404
+        raise Http404()
 
 
 # ici on definit un fonction qui retourne des url dynamique, le parametre month est aussi defini comme le nom de notre url dans le fichier urls

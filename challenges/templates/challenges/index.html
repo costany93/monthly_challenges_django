@@ -1,11 +1,19 @@
 {% extends "base.html" %}
-
+<!-- permet de charger les fichiers static -->
+{% load static %}
 
     {% block page_title %}Mes chalenges {% endblock  %}
+    {% block css_block %}
+        <link rel="stylesheet" href="{% static "challenges/challenges.css"%}">
+        <link rel="stylesheet" href="{% static "challenges/includes/header.css"%}">
+    {% comment %} {% endblock css_block %} {% endcomment %}
+    {% endblock css_block %}
     {% block content %}
+        {% include "challenges/includes/header.html" %}
         <ul>
+            <!-- ici la fonction url nous ai donnee par django html afin de pouvoir dynamiser les urls dans les templates -->
             {% for month  in  months %}
-                <!-- ici la fonction url nous ai donnee par django html afin de pouvoir dynamiser les urls dans les templates -->
+                
                 <li><a href="{% url "month-challenges" month %}">{{ month }}</a></li>
             {% endfor %}
         </ul>

@@ -16,7 +16,7 @@ urlpatterns = [
     path("<int:month>", views.monthly_challenges_by_month),
     # par defaut cette config d'url sans str pouvait revoir tout type de donnee qui pouvait etre passee en formattant avec le str cette url ne pourra plus que recevoir les string en parametre. NB ici il s'agit d'uune route ou d'un url non nommee no-named url
     path("<str:month>", views.monthly_challenge, name="month-challenges"),
-    path("", views.index)
+    path("", views.index, name="challenges-index")
 
 
 

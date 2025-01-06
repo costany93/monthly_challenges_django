@@ -1,9 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block page_title %}Mes Challenges{% endblock  %}</title>
+    <!-- Pour ajouter des fichiers static globaux de notre applications on doit modifier le fichier settings en y ajoutant -->
+    <link rel="stylesheet" href="{% static "general_file.css" %}">
+    {% block css_block %}{% endblock css_block %}
+    
 </head>
 <body>
     {% block content %}{% endblock  %}

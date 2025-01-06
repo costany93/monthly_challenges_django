@@ -5,3 +5,7 @@ Encore mieux et recommande pour utiliser les templates c'est de placer le nom du
 Placer la reconnaissance des templates dans le DIRS du fichier settings si et seulement si ces templates seront utilise par plusieurs app de notre projet django
 
 dans le cas d'une utilisation a l'interieur de notre app il vaut mieux utiliser INSTALLED_APPS pour installer noss templates
+
+Pour afficher la page 404 lors de la phase de production il faut enlever la phase DEBUG de false a true
+
+Pour utiliser les fichiers static assurer vous que dans settings vouus avez bien dans les apps  'django.contrib.staticfiles' et STATIC_URL = 'static/'
